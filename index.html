@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F7F8FC">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="MetodologIA">
+  <title>MetodologIA — Espaço do professor</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%236B4EFF'/><path d='M50 18l7 18 18 7-18 7-7 18-7-18-18-7 18-7z' fill='white'/></svg>">
+</head>
+<body>
+  <a class="skip" href="#view">Pular para o conteúdo</a>
+
+  <!-- ============ LOGIN ============ -->
+  <section id="auth" class="auth hidden" aria-labelledby="authTitle">
+    <div class="auth-side">
+      <div class="brand"><span class="brand-mark" id="brandMark1"></span><span>Metodolog<span class="brand-ia">IA</span></span></div>
+      <div class="auth-copy">
+        <p class="eyebrow">Espaço do professor</p>
+        <h1 id="authTitle">Sua experiência. Novas possibilidades.</h1>
+        <p class="lead">A MetodologIA apoia professoras e professores de todas as áreas a transformar uma ideia em uma aula mais prática e contextualizada. A IA inspira o planejamento. Você faz a aula acontecer.</p>
+        <ul class="auth-points">
+          <li><span class="pt" id="pt1"></span>Sugestões pedagógicas para você revisar</li>
+          <li><span class="pt" id="pt2"></span>Materiais organizados para a sua turma</li>
+          <li><span class="pt" id="pt3"></span>Você tem a palavra final. Sempre.</li>
+        </ul>
+      </div>
+      <div class="auth-illu" id="authIllu"></div>
+    </div>
+    <div class="auth-main">
+      <div class="auth-card">
+        <div class="tabs" id="authTabs" role="tablist">
+          <button class="tab active" data-tab="login" role="tab" aria-selected="true">Entrar</button>
+          <button class="tab" data-tab="register" role="tab" aria-selected="false">Criar conta</button>
+        </div>
+        <form id="loginForm" class="form" novalidate>
+          <label>E-mail<input type="email" name="email" id="loginEmail" required autocomplete="email" placeholder="voce@escola.edu.br"></label>
+          <label>Senha<input type="password" name="senha" id="loginSenha" required autocomplete="current-password" placeholder="Sua senha"></label>
+          <button class="btn primary block" type="submit" id="loginBtn">Entrar</button>
+          <div class="demo-box">
+            <p class="demo-title">Acesso de demonstração <span>· toque para preencher</span></p>
+            <div id="demoList"></div>
+          </div>
+        </form>
+        <form id="registerForm" class="form hidden" novalidate>
+          <label>Nome completo<input name="nome" required autocomplete="name"></label>
+          <label>E-mail<input type="email" name="email" required autocomplete="email"></label>
+          <label>Senha<input type="password" name="senha" minlength="6" required autocomplete="new-password" placeholder="Mínimo de 6 caracteres"></label>
+          <label>Disciplina principal<input name="disciplina" placeholder="Ex.: Matemática, História, Biologia"></label>
+          <label>Escola<input name="escola" placeholder="Nome da escola"></label>
+          <button class="btn primary block" type="submit">Criar conta</button>
+        </form>
+        <p class="auth-error" id="authError" role="alert"></p>
+        <p class="auth-note">Protótipo navegável · sem login real · dados salvos apenas neste navegador</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ APP ============ -->
+  <div id="app" class="app hidden">
+    <aside class="sidebar" aria-label="Navegação principal">
+      <div class="brand"><span class="brand-mark" id="brandMark2"></span><span>Metodolog<span class="brand-ia">IA</span></span></div>
+      <p class="side-label">Espaço do professor</p>
+      <nav class="nav" id="sideNav"></nav>
+      <div class="side-card" id="sideCard"></div>
+      <a class="side-help" href="#/ajuda" id="sideHelp"></a>
+    </aside>
+    <div class="main">
+      <header class="topbar">
+        <div class="brand mobile-only"><span class="brand-mark" id="brandMark3"></span><span>Metodolog<span class="brand-ia">IA</span></span></div>
+        <div class="crumb desktop-only" id="crumb"></div>
+        <div class="topbar-right">
+          <button class="user-btn" id="userBtn" aria-haspopup="menu" aria-expanded="false"><span class="avatar" id="topAvatar"></span><span class="user-txt"><strong id="topName"></strong><span id="topRole"></span></span></button>
+          <div class="user-menu hidden" id="userMenu" role="menu"></div>
+        </div>
+      </header>
+      <main id="view" class="view" tabindex="-1"></main>
+    </div>
+    <nav class="bottom-nav" id="bottomNav" aria-label="Navegação principal"></nav>
+  </div>
+
+  <div class="modal hidden" id="modal"><div class="modal-backdrop" data-close></div><div class="modal-box" id="modalBox" role="dialog" aria-modal="true"></div></div>
+  <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/bncc.js"></script>
+  <script src="js/ai.js"></script>
+  <script src="js/aula.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
